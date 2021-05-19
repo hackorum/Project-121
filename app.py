@@ -27,7 +27,7 @@ while cap.isOpened():
     f = np.where(f == 0, image, f)
     # cv2.imshow("Real Video", frame)
     cv2.imshow("Masked Video", f)
-    final_output = cv2.addWeighted(res, 1, res, 1, 0)
+    final_output = cv2.addWeighted(res, 0, f, 1, 1)
     out_file.write(final_output)
     k = cv2.waitKey(1)
     if k == 27 or k == 81:
